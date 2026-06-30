@@ -194,9 +194,9 @@ export const DESTINATIONS: Destination[] = [
     region: 'Rajasthan, India',
     price: '₹22,999 onwards (Unbeatable Group Deals)',
     duration: '4 Days / 3 Nights',
-    image: 'https://tse3.mm.bing.net/th/id/OIP.Ch1z68R8jmBBIaoeymW1CQHaEK?r=0&cb=thfvnextfalcon3&rs=1&pid=ImgDetMain&o=7&rm=3',
+    image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&q=80&w=1200',
     gallery: [
-      'https://tse3.mm.bing.net/th/id/OIP.Ch1z68R8jmBBIaoeymW1CQHaEK?r=0&cb=thfvnextfalcon3&rs=1&pid=ImgDetMain&o=7&rm=3',
+      'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&q=80&w=1200',
       'https://images.unsplash.com/photo-1603262110263-fb0112e7cc33?auto=format&fit=crop&q=80&w=1200',
       'https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2022/02/Mehrangarh-Fort-Jodhpur-Rajasthan-1.jpg?w=1200&ssl=1',
       'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&q=80&w=1200'
@@ -228,8 +228,8 @@ export const DESTINATIONS: Destination[] = [
     image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=1200',
     gallery: [
       'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=1200',
-      'https://images.unsplash.com/photo-1546412414-e188526119af?auto=format&fit=crop&q=80&w=1200',
-      'https://images.unsplash.com/photo-1582672060674-bc2bd808a8e5?auto=format&fit=crop&q=80&w=1200'
+      'https://wallpapercave.com/wp/wp3605186.jpg',
+      'https://i.pinimg.com/originals/d7/5c/77/d75c77cbf0770919491f6a7f58a57332.jpg'
     ],
     highlights: [
       'Burj Khalifa 124th + 125th Floor tickets customized slot times',
