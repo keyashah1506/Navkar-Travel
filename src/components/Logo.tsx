@@ -15,7 +15,7 @@ export default function Logo({ className = '', showTagline = true }: LogoProps) 
   return (
     <div className={`flex flex-col items-start select-none ${className}`} id="navkar-trademark-original-logo">
       <img
-        src={keyashah1506/Navkar-Travel/logo.png}
+        src={logoImage}
         alt="Navkar Travel logo"
         className="h-12 sm:h-14 w-auto"
       />
