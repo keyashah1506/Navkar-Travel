@@ -1,0 +1,6 @@
+{
+  "name": "Navkar Travel",
+  "description": "A high-end luxury website for Navkar Travel featuring a premium destination gallery, elegant client reviews, an immersive visual story of our heritage, and a responsive contact portal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
