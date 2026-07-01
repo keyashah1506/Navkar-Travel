@@ -73,18 +73,18 @@ export default function Navbar({ activeTab, setActiveTab }: NavbarProps) {
           <div className="hidden md:flex items-center gap-6" id="nav-desktop-actions">
             <div className="flex flex-col items-end text-right">
               <a 
-                href="tel:+919558328627" 
+                href="tel:+919725224433" 
                 className="text-[10px] uppercase tracking-[0.15em] font-bold text-white hover:text-med-terracotta transition-colors"
                 title="Primary Support"
               >
-                +91 95583 28627
+                +91 97252 24433
               </a>
               <a 
-                href="tel:+919725224433" 
+                href="tel:+919558328627" 
                 className="text-[9px] uppercase tracking-[0.15em] font-medium text-slate-400 hover:text-med-terracotta transition-colors"
                 title="Secondary Support"
               >
-                +91 97252 24433
+                +91 95583 28627
               </a>
             </div>
             <button
