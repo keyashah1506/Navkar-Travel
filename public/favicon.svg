@@ -1,0 +1,27 @@
+<svg viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sky-Blue Central Stylized V with Airplane wings and elegant split-trail -->
+  <g fill="#0ea5e9" transform="translate(-32, -2) scale(1.05)">
+    <!-- Left tapered arm of the V: clean wedge pointing down to the vertex -->
+    <path d="M 48,47 L 55,46 L 75.5,90 L 73.5,90 Z" />
+
+    <!-- Lower/inner branch of the right swoosh trail -->
+    <path d="M 74,89 C 83,72 98,48 126,22 C 125,24 100,56 74,90 Z" />
+
+    <!-- Upper/outer branch carrying the airplane Fuselage and Wing structures -->
+    <path d="
+        M 65.5,72.5 
+        C 68,66 71,60 71,60 
+        L 60,56 
+        L 67,51 
+        L 74,53 
+        C 77.5,47.5 83,41 86,38 
+        L 80,35 
+        L 84,31 
+        L 89,33 
+        C 97.5,27.5 111,19.5 128,18 
+        C 127.5,18.5 122,23 118,27.5
+        C 107.5,35.5 89,53 66,73.5
+        Z
+      " />
+  </g>
+</svg>
