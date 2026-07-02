@@ -70,11 +70,8 @@ export default function Hero({ onExploreDestinations, onInquire }: HeroProps) {
               </p>
  
               {/* Main luxurious heading */}
-              <h1 className="font-serif text-5xl sm:text-7xl xl:text-8xl font-normal italic tracking-tighter text-white leading-[0.9] select-none">
-                {HERO_SLIDES[currentSlide].title.split(' ').slice(0, 3).join(' ')} <br />
-                <span className="opacity-90 block mt-2 ml-12 sm:ml-20">
-                  {HERO_SLIDES[currentSlide].title.split(' ').slice(3).join(' ') || 'Escapes.'}
-                </span>
+              <h1 className="font-serif text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-normal italic tracking-tight text-white leading-[1.15] select-none">
+                {HERO_SLIDES[currentSlide].title}
               </h1>
  
               {/* Elegant description */}
@@ -160,7 +157,7 @@ export default function Hero({ onExploreDestinations, onInquire }: HeroProps) {
           <div className="grid grid-cols-4 gap-6 bg-med-ocean/90 backdrop-blur-sm border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.3)] rounded-2xl p-4">
             
             <div className="flex items-center gap-3 border-r border-white/10 justify-center">
-              <MapPin className="h-4.5 w-4.5 text-sky-400 shrink-0" />
+              <MapPin className="h-4.5 w-4.5 text-[#0ea5e9] shrink-0" />
               <div>
                 <p className="text-white text-[10px] font-semibold tracking-widest uppercase font-display">100% Customized</p>
                 <p className="text-slate-300 text-[9px]">Built to Your Needs</p>
@@ -168,7 +165,7 @@ export default function Hero({ onExploreDestinations, onInquire }: HeroProps) {
             </div>
  
             <div className="flex items-center gap-3 border-r border-white/10 justify-center">
-              <ShieldCheck className="h-4.5 w-4.5 text-emerald-400 shrink-0" />
+              <ShieldCheck className="h-4.5 w-4.5 text-[#8ec63f] shrink-0" />
               <div>
                 <p className="text-white text-[10px] font-semibold tracking-widest uppercase font-display">Lowest Rate Info</p>
                 <p className="text-slate-300 text-[9px]">Best Price Guaranteed</p>
@@ -176,7 +173,7 @@ export default function Hero({ onExploreDestinations, onInquire }: HeroProps) {
             </div>
  
             <div className="flex items-center gap-3 border-r border-white/10 justify-center">
-              <Compass className="h-4.5 w-4.5 text-med-terracotta shrink-0" />
+              <Compass className="h-4.5 w-4.5 text-[#f97316] shrink-0" />
               <div>
                 <p className="text-white text-[10px] font-semibold tracking-widest uppercase font-display">No Hidden Fees</p>
                 <p className="text-slate-300 text-[9px]">Direct Wholesaler Deals</p>
@@ -184,7 +181,7 @@ export default function Hero({ onExploreDestinations, onInquire }: HeroProps) {
             </div>
  
             <div className="flex items-center gap-3 justify-center">
-              <HeartPulse className="h-4.5 w-4.5 text-sky-400 shrink-0" />
+              <HeartPulse className="h-4.5 w-4.5 text-[#0ea5e9] shrink-0" />
               <div>
                 <p className="text-white text-[10px] font-semibold tracking-widest uppercase font-display">24/7 Assistance</p>
                 <p className="text-slate-300 text-[9px]">Dedicated Trip Managers</p>

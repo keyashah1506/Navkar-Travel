@@ -28,7 +28,7 @@ export default function Footer({ setActiveTab }: FooterProps) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
               <div className="p-3 bg-med-navy rounded-full border border-white/5">
-                <Award className="h-5 w-5 text-sky-400" />
+                <Award className="h-5 w-5 text-[#0ea5e9]" />
               </div>
               <div>
                 <h4 className="font-display text-xs font-semibold tracking-wider text-white">100% CUSTOM BUILT</h4>
@@ -37,7 +37,7 @@ export default function Footer({ setActiveTab }: FooterProps) {
             </div>
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
               <div className="p-3 bg-med-navy rounded-full border border-white/5">
-                <Shield className="h-5 w-5 text-sky-400" />
+                <Shield className="h-5 w-5 text-[#8ec63f]" />
               </div>
               <div>
                 <h4 className="font-display text-xs font-semibold tracking-wider text-white">LOWEST RATES GUARANTEED</h4>
@@ -46,7 +46,7 @@ export default function Footer({ setActiveTab }: FooterProps) {
             </div>
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
               <div className="p-3 bg-med-navy rounded-full border border-white/5">
-                <Heart className="h-5 w-5 text-sky-400" />
+                <Heart className="h-5 w-5 text-[#f97316]" />
               </div>
               <div>
                 <h4 className="font-display text-xs font-semibold tracking-wider text-white">ONSITE ASSISTANCE</h4>
