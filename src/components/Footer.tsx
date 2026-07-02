@@ -135,8 +135,8 @@ export default function Footer({ setActiveTab }: FooterProps) {
               <div className="flex gap-2 items-start">
                 <Phone className="h-4 w-4 text-sky-400 shrink-0 mt-0.5" />
                 <div className="flex flex-col gap-1">
-                  <a href="tel:+919558328627" className="text-slate-300 hover:text-white transition-colors">+91 95583 28627 (Primary)</a>
-                  <a href="tel:+919725224433" className="text-slate-300 hover:text-white transition-colors">+91 97252 24433 (Secondary)</a>
+                  <a href="tel:+919558328627" className="text-slate-300 hover:text-white transition-colors">+91 97252 24433 (Primary)</a>
+                  <a href="tel:+919725224433" className="text-slate-300 hover:text-white transition-colors">+91 95583 28627 (Secondary)</a>
                 </div>
               </div>
               <div className="flex gap-2 items-center">
