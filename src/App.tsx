@@ -9,6 +9,7 @@
  */
 
 import React, { useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Gallery from './components/Gallery';
@@ -289,7 +290,8 @@ export default function App() {
       {/* Global brand footer */}
       <Footer setActiveTab={setActiveTab} />
 
+      {/* Vercel Web Analytics */}
+      <Analytics />
     </div>
   );
 }
-
