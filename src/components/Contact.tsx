@@ -31,9 +31,46 @@ export default function Contact({ preselectedDestination, onClearPreselected }: 
     }
   }, [preselectedDestination]);
 
+  const getEmailLink = () => {
+    const budgetLabel = classPref === 'standard' 
+      ? 'Standard (Budget-Friendly)' 
+      : classPref === 'premium' 
+      ? 'Premium (Best Value)' 
+      : 'Bespoke Luxury 👑';
+
+    const subject = `Custom Itinerary Inquiry - ${fullName} (${destination})`;
+    const body = `Hello Navkar Travel Team,
+
+I would like to request a custom travel itinerary and package. Here are my specifications:
+
+📋 LEAD TRAVELER DETAILS:
+• Full Name: ${fullName}
+• Email: ${email}
+• WhatsApp Phone: ${phone}
+
+✈️ HOLIDAY SPECIFICATIONS:
+• Destination: ${destination}
+• Number of Guests: ${travelers} Guests
+• Preferred Budget/Package: ${budgetLabel}
+• Intended Departure Date: ${date || 'Flexible'}
+
+📝 SPECIAL REQUIREMENTS:
+${notes || 'None'}
+
+Please prepare my custom itinerary and quote. I look forward to receiving it within 120 minutes!
+
+Best regards,
+${fullName}`;
+
+    return `mailto:navkar.holiday@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+
   const handleInquirySubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!fullName.trim() || !email.trim()) return;
+
+    const mailUrl = getEmailLink();
+    window.open(mailUrl, '_blank');
 
     // Simulate submission and trigger detailed success summary
     setIsSubmitted(true);
@@ -63,7 +100,7 @@ export default function Contact({ preselectedDestination, onClearPreselected }: 
           <h2 className="font-serif text-3xl sm:text-5xl font-normal italic text-white tracking-tighter">Your Dream, Fully Custom-Built</h2>
           <div className="h-[1px] w-16 bg-white/20 mx-auto mt-3" />
           <p className="text-xs sm:text-sm font-sans text-slate-300 font-light max-w-2xl leading-relaxed mx-auto">
-            Submit your travel desires below. Give us your custom dates, diet restrictions, preferred budget, or landmarks. We guarantee to plan a personalized package at the absolute lowest rate across India. We will share your free custom quote on WhatsApp/Email under 120 minutes!
+            Submit your travel desires below. Give us your custom dates, diet restrictions, preferred budget, or landmarks. We guarantee to plan a personalized package at the absolute lowest rate across India. We will share your free custom quote on Email under 120 minutes!
           </p>
         </div>
 
@@ -91,7 +128,7 @@ export default function Contact({ preselectedDestination, onClearPreselected }: 
                   <div>
                     <p className="text-slate-400 mb-0.5 uppercase tracking-wider text-[9px]">DIRECT SIGHTSEEING WHATSAPP / CALL</p>
                     <p className="font-bold text-white text-sm">
-                      <a href="tel:++919725224433" className="hover:text-med-terracotta transition-colors">+91 97252 24433</a>
+                      <a href="tel:+919725224433" className="hover:text-med-terracotta transition-colors">+91 97252 24433</a>
                       <span className="text-white/20 font-normal mx-2">|</span>
                       <a href="tel:+919558328627" className="hover:text-med-terracotta transition-colors text-xs text-slate-300">+91 95583 28627</a>
                     </p>
@@ -186,17 +223,33 @@ export default function Contact({ preselectedDestination, onClearPreselected }: 
                       </div>
                       <div>
                         <span className="text-slate-400 block text-[9px]">BUDGET TIER</span>
-                        <strong className="font-semibold text-[#FAF6F0] uppercase tracking-widest text-[9px] block mt-0.5">₹ {classPref} Custom</strong>
+                        <strong className="font-semibold text-[#FAF6F0] uppercase tracking-widest text-[9px] block mt-0.5">{classPref} Custom</strong>
                       </div>
                     </div>
                   </div>
 
-                  <button
-                    onClick={resetForm}
-                    className="border border-white/20 hover:border-med-terracotta text-[#FAF6F0] hover:bg-med-terracotta hover:text-white px-6 py-3.5 rounded-xl font-display text-xs font-semibold tracking-widest transition-all cursor-pointer"
-                  >
-                    BUILD ANOTHER TRAVEL PLAN
-                  </button>
+                  {/* Email Action Button */}
+                  <div className="max-w-sm mx-auto space-y-3 pt-2">
+                    <a
+                      href={getEmailLink()}
+                      className="w-full flex items-center justify-center gap-2.5 bg-sky-600 hover:bg-sky-500 text-white py-4 rounded-xl font-display text-xs font-bold tracking-widest transition-all cursor-pointer shadow-[0_4px_15px_rgba(14,165,233,0.15)] hover:shadow-[0_4px_25px_rgba(14,165,233,0.3)] hover:-translate-y-0.5 active:translate-y-0 duration-200"
+                    >
+                      <Mail className="h-4 w-4" />
+                      <span>SEND INQUIRY TO EMAIL DESK</span>
+                    </a>
+                    <p className="text-[10.5px] text-slate-400 text-center leading-relaxed font-light">
+                      If your mail application didn't open automatically, use the button above to dispatch your travel specifications.
+                    </p>
+                  </div>
+
+                  <div className="pt-2">
+                    <button
+                      onClick={resetForm}
+                      className="border border-white/20 hover:border-med-terracotta text-[#FAF6F0] hover:bg-med-terracotta hover:text-white px-6 py-3 rounded-xl font-display text-[10px] font-semibold tracking-widest transition-all cursor-pointer"
+                    >
+                      BUILD ANOTHER TRAVEL PLAN
+                    </button>
+                  </div>
                 </motion.div>
               ) : (
                 <form onSubmit={handleInquirySubmit} className="space-y-6 font-sans text-xs">
@@ -343,7 +396,7 @@ export default function Contact({ preselectedDestination, onClearPreselected }: 
                     type="submit"
                     className="w-full flex items-center justify-center gap-2 bg-med-terracotta text-white hover:bg-[#c95a42] py-4 rounded-xl font-display text-xs font-bold tracking-widest transition-all cursor-pointer group border border-med-terracotta"
                   >
-                    <span>BUILD CUSTOM HOLIDAY SUMMARY</span>
+                    <span>BUILD SUMMARY & DISPATCH VIA EMAIL</span>
                     <Send className="h-4 w-4 group-hover:translate-x-1 duration-250 transition-transform" />
                   </button>
 
