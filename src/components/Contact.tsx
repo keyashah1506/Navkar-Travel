@@ -62,7 +62,7 @@ Please prepare my custom itinerary and quote. I look forward to receiving it wit
 Best regards,
 ${fullName}`;
 
-    return `mailto:navkar.holiday@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    return `mailto:navkartravel.amd@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   const handleInquirySubmit = (e: React.FormEvent) => {
