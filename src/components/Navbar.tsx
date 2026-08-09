@@ -19,6 +19,7 @@ export default function Navbar({ activeTab, setActiveTab }: NavbarProps) {
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'destinations', label: 'Curated Galleries' },
+    { id: 'navkar-holidays', label: 'NAVKAR Holidays' },
     { id: 'reviews', label: 'Client Reviews' },
     { id: 'about', label: 'Our Story' },
     { id: 'contact', label: 'Contact & Booking' }

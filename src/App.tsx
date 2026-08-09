@@ -364,7 +364,7 @@ export default function App() {
         )}
 
         {activeTab === 'navkar-holidays' && (
-          <NavkarHolidays />
+          <NavkarHolidays onInquire={() => handleSelectBooking('NAVKAR Holidays Services')} />
         )}
 
       </main>

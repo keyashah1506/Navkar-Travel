@@ -102,6 +102,11 @@ export default function Footer({ setActiveTab }: FooterProps) {
             <h4 className="font-display text-xs font-bold tracking-widest text-sky-400 uppercase mb-5 font-semibold">COMPANY</h4>
             <ul className="space-y-3 font-sans text-xs text-slate-300">
               <li>
+                <button onClick={() => handleLinkClick('navkar-holidays')} className="hover:text-white hover:font-medium hover:translate-x-1 transition-all duration-200 cursor-pointer text-left flex items-center gap-1.5 font-semibold text-sky-300">
+                  <span>NAVKAR Holidays (Digital Card)</span>
+                </button>
+              </li>
+              <li>
                 <button onClick={() => handleLinkClick('about')} className="hover:text-white hover:font-medium hover:translate-x-1 transition-all duration-200 cursor-pointer text-left">
                   Our Story & Custom Vehicles
                 </button>
