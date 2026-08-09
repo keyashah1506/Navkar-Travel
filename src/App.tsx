@@ -8,7 +8,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import Navbar from './components/Navbar';
@@ -18,14 +18,91 @@ import Reviews from './components/Reviews';
 import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import NavkarHolidays from './components/NavkarHolidays';
 import ParallaxImage from './components/ParallaxImage';
 import { DESTINATIONS } from './data/destinations';
 import { Compass, Sparkles, Shield, Trophy, ArrowRight, UserCheck, Star, ChevronRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
+const ROUTE_TO_TAB: Record<string, string> = {
+  '/': 'home',
+  '/destinations': 'destinations',
+  '/reviews': 'reviews',
+  '/about': 'about',
+  '/contact': 'contact',
+  '/navkar-holidays': 'navkar-holidays',
+};
+
+const TAB_META: Record<string, { title: string; description: string }> = {
+  home: {
+    title: 'Navkar Travel',
+    description: 'Navkar Travel offers custom holidays, luxury transfers, and bespoke travel packages across India and beyond.',
+  },
+  destinations: {
+    title: 'Curated Galleries | Navkar Travel',
+    description: 'Explore our curated destination galleries and luxury travel packages tailored to your needs.',
+  },
+  reviews: {
+    title: 'Client Reviews | Navkar Travel',
+    description: 'Read direct client reviews from travelers who trusted Navkar Travel for custom holiday packages.',
+  },
+  about: {
+    title: 'Our Story | Navkar Travel',
+    description: 'Learn how Navkar Travel crafts premium custom journeys with transparent pricing and personalized service.',
+  },
+  contact: {
+    title: 'Contact & Booking | Navkar Travel',
+    description: 'Contact Navkar Travel for custom itinerary requests, flight booking, and holiday planning.',
+  },
+  'navkar-holidays': {
+    title: 'NAVKAR Holidays | Navkar Tours & Travels',
+    description: 'NAVKAR Holidays offers International & Domestic Air Tickets, Holidays & Hotel Booking, Honeymoon Packages, Travel Insurance, Visas, Passport and Cruise Booking in Ahmedabad.',
+  },
+};
+
+function getTabFromPath(pathname: string) {
+  return ROUTE_TO_TAB[pathname] || 'home';
+}
+
+function getPathFromTab(tabId: string) {
+  return Object.entries(ROUTE_TO_TAB).find(([, tab]) => tab === tabId)?.[0] || '/';
+}
+
 export default function App() {
   const [activeTab, setActiveTab] = useState<string>('home');
   const [preselectedDestination, setPreselectedDestination] = useState<string>('');
+
+  React.useEffect(() => {
+    const initialTab = getTabFromPath(window.location.pathname);
+    setActiveTab(initialTab);
+    window.history.replaceState({}, '', getPathFromTab(initialTab));
+
+    const handlePopState = () => {
+      setActiveTab(getTabFromPath(window.location.pathname));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  React.useEffect(() => {
+    const path = getPathFromTab(activeTab);
+    if (window.location.pathname !== path) {
+      window.history.pushState({}, '', path);
+    }
+
+    const metadata = TAB_META[activeTab] || TAB_META.home;
+    document.title = metadata.title;
+
+    let metaDescription = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = 'description';
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.content = metadata.description;
+  }, [activeTab]);
 
   const handleSelectBooking = (destinationTitle: string) => {
     setPreselectedDestination(destinationTitle);
@@ -284,6 +361,10 @@ export default function App() {
             preselectedDestination={preselectedDestination} 
             onClearPreselected={handleClearPreselected} 
           />
+        )}
+
+        {activeTab === 'navkar-holidays' && (
+          <NavkarHolidays />
         )}
 
       </main>
