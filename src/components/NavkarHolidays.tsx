@@ -196,7 +196,7 @@ export default function NavkarHolidays({ onInquire }: NavkarHolidaysProps) {
                 </a>
 
                 <a
-                  href="https://wa.me/919558328627?text=Hello%20NAVKAR%20Holidays%2C%20I%20would%20like%20to%20inquire%20about%20your%20travel%20services."
+                  href="https://wa.me/919725224433?text=Hello%20NAVKAR%20Holidays%2C%20I%20would%20like%20to%20inquire%20about%20your%20travel%20services."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-display font-bold uppercase tracking-wider transition-all cursor-pointer shadow-lg shadow-emerald-600/20"

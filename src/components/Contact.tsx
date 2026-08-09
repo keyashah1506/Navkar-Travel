@@ -127,9 +127,17 @@ ${fullName}`;
                   </div>
                   <div>
                     <p className="text-slate-400 mb-0.5 uppercase tracking-wider text-[9px]">DIRECT SIGHTSEEING WHATSAPP / CALL</p>
-                    <p className="font-bold text-white text-sm">
+                    <p className="font-bold text-white text-sm flex items-center gap-2">
                       <a href="tel:+919725224433" className="hover:text-med-terracotta transition-colors">+91 97252 24433</a>
-                      <span className="text-white/20 font-normal mx-2">|</span>
+                      <a
+                        href="https://wa.me/919725224433?text=Hello%20Navkar%20Travel%2C%20I%20would%20like%20to%20inquire%20about%20a%20custom%20tour%20package."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[10px] font-display font-semibold uppercase text-emerald-400 hover:text-emerald-300 bg-emerald-500/10 py-0.5 px-2 rounded border border-emerald-500/20"
+                      >
+                        WhatsApp
+                      </a>
+                      <span className="text-white/20 font-normal">|</span>
                       <a href="tel:+919558328627" className="hover:text-med-terracotta transition-colors text-xs text-slate-300">+91 95583 28627</a>
                     </p>
                   </div>
